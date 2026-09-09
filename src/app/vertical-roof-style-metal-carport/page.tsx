@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -67,6 +68,18 @@ export default function Page() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white pt-10">
+        <div className="container mx-auto px-4">
+          <Image
+            src="/images/vertical-carport-1024x576.jpeg"
+            alt="Vertical roof style metal carport"
+            width={1024}
+            height={576}
+            className="w-full max-w-4xl mx-auto h-auto rounded-lg"
+          />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -29,6 +30,13 @@ export default function RoofingColorPickersPage() {
               href="/roofing-color-pickers/metal-roofing"
               className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
+              <Image
+                src="/images/r-panel-panel-large.png"
+                alt="Metal roofing color options"
+                width={600}
+                height={360}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors">
                   Metal Roofing Color Picker
@@ -43,6 +51,13 @@ export default function RoofingColorPickersPage() {
               href="/roofing-color-pickers/shingles"
               className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
+              <Image
+                src="/images/timberline-large-slate.jpeg"
+                alt="GAF Timberline HD shingle colors"
+                width={600}
+                height={360}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors">
                   Traditional Shingle Roofing Color Picker

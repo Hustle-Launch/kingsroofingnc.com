@@ -8,7 +8,7 @@ const csp = [
   "img-src 'self' data: https: blob:",
   "font-src 'self' data:",
   "connect-src 'self' https://vitals.vercel-insights.com https://*.sentry.io https://*.posthog.com https://*.i.posthog.com",
-  "frame-src 'none'",
+  "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
   "frame-ancestors 'none'",
   "object-src 'none'",
   "base-uri 'self'",
@@ -36,6 +36,27 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/waynesville",
+        destination: "/residential/waynesville",
+        permanent: true,
+      },
+      {
+        source: "/highlands",
+        destination: "/residential/highlands",
+        permanent: true,
+      },
+      {
+        source: "/cashiers",
+        destination: "/residential/cashiers",
+        permanent: true,
+      },
+      { source: "/asheville", destination: "/residential/asheville", permanent: true },
+      { source: "/sitemap", destination: "/sitemap.xml", permanent: true },
     ];
   },
 };

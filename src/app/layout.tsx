@@ -51,9 +51,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: COMPANY.name,
+    images: [
+      {
+        url: "/images/khc-green-big.jpeg",
+        width: 2560,
+        height: 1600,
+        alt: "Kings Roofing, Inc. — Western NC roofing contractor",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/khc-green-big.jpeg"],
   },
   robots: {
     index: true,

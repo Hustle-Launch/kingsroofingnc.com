@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -10,29 +11,31 @@ export const metadata: Metadata = {
 };
 
 const METAL_COLORS = [
-  "Barn Red",
-  "Black",
-  "Bright Red",
-  "Bronze",
-  "Brown",
-  "Burgundy",
-  "Charcoal",
-  "Clay",
-  "Copper Penny",
-  "Gallery Blue",
-  "Galvalume",
-  "Gray",
-  "Hawaiian Blue",
-  "Hunter Green",
-  "Pure White",
-  "Sierra Tan",
-  "Stone",
-  "White",
-];
+  { name: "Barn Red", slug: "barn_red" },
+  { name: "Black", slug: "black" },
+  { name: "Bright Red", slug: "bright_red" },
+  { name: "Bronze", slug: "bronze" },
+  { name: "Brown", slug: "brown" },
+  { name: "Burgundy", slug: "burgundy" },
+  { name: "Charcoal", slug: "charcoal" },
+  { name: "Clay", slug: "clay" },
+  { name: "Copper Penny", slug: "copper_penny" },
+  { name: "Gallery Blue", slug: "gallery_blue" },
+  { name: "Galvalume", slug: "galvalume" },
+  { name: "Gray", slug: "gray" },
+  { name: "Hawaiian Blue", slug: "hawaiian_blue" },
+  { name: "Hunter Green", slug: "hunter_green" },
+  { name: "Pure White", slug: "pure_white" },
+  { name: "Sierra Tan", slug: "sierra_tan" },
+  { name: "Stone", slug: "stone" },
+  { name: "White", slug: "white" },
+] as const;
 
 const PANEL_TYPES = [
   {
     name: "Tuff-Rib / Class Rib Metal Roofing Panel",
+    profile: "/images/tuff-rib-profile.gif",
+    panel: "/images/tuff-rib-metal-roofing-panel.gif",
     description:
       "This is one of our most popular panel brands, and it's due to it being a great choice for both Residential and Commercial, and it is very economical. It's a highly lasting and durable metal roofing panel from start to finish. The manufacturer starts with a high tensile steel, and then coats it with Galvalume zinc-aluminum coating, and then primes it, and adds a layer of baked-on enamel.\n\nIt includes a watertight design that features a built-in water siphon channel. This means that under hazardous weather climates the rain will still get diverted away, instead of underneath the material.",
     specs: [
@@ -50,6 +53,8 @@ const PANEL_TYPES = [
   },
   {
     name: "R-Panel / PBR Panel",
+    profile: "/images/r-panel-profile_0.gif",
+    panel: "/images/r-panel-panel-large.png",
     description:
       "This is the most commonly used Commercial metal roofing/siding panel. Its 1 1/4″ tall ribs are great for coverage and slopes!",
     specs: [
@@ -68,6 +73,8 @@ const PANEL_TYPES = [
   },
   {
     name: "5V-Crimp Panel",
+    profile: "/images/5v-crimp-panel-profile.gif",
+    panel: "/images/5v-crimp-panel-metal-roofing.png",
     description:
       "5V metal roofing panels are known nationwide for being widely used on older homes and barns. Since it was one of the original metal roofs, and has five ribs with a low profile, it makes it a great choice for any roof.",
     specs: [
@@ -86,6 +93,8 @@ const PANEL_TYPES = [
   },
   {
     name: "Corrugated Metal Panels",
+    profile: "/images/corrugated-profile.jpeg",
+    panel: "/images/corrugated-roof-panel-large.png",
     description:
       "Found all across America, these are known for their wavy style. These metal roofing panels are commonly used with agricultural buildings and have made a comeback by being used for accent walls, and ceilings.",
     specs: [
@@ -123,10 +132,17 @@ export default function MetalRoofingColorPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
             {METAL_COLORS.map((color) => (
               <div
-                key={color}
-                className="bg-white p-4 rounded-lg text-center shadow hover:shadow-md transition-shadow"
+                key={color.slug}
+                className="bg-white rounded-lg text-center shadow hover:shadow-md transition-shadow overflow-hidden"
               >
-                <span className="font-medium text-gray-900">{color}</span>
+                <Image
+                  src={`/images/bestbuymetal-picker-${color.slug}.jpeg`}
+                  alt={`${color.name} metal roofing color`}
+                  width={200}
+                  height={120}
+                  className="w-full h-20 object-cover"
+                />
+                <span className="block font-medium text-gray-900 p-3">{color.name}</span>
               </div>
             ))}
           </div>
@@ -147,6 +163,28 @@ export default function MetalRoofingColorPage() {
             {PANEL_TYPES.map((panel) => (
               <div key={panel.name} className="border-b border-gray-200 pb-12 last:border-0">
                 <h4 className="text-2xl font-bold text-gray-900 mb-4">{panel.name}</h4>
+                <div className="flex flex-wrap gap-4 mb-6 items-center">
+                  <img
+                    src={panel.profile}
+                    alt={`${panel.name} profile`}
+                    className="h-24 w-auto object-contain"
+                  />
+                  {panel.panel.endsWith(".gif") ? (
+                    <img
+                      src={panel.panel}
+                      alt={panel.name}
+                      className="h-40 w-auto object-contain"
+                    />
+                  ) : (
+                    <Image
+                      src={panel.panel}
+                      alt={panel.name}
+                      width={640}
+                      height={360}
+                      className="h-40 w-auto object-contain"
+                    />
+                  )}
+                </div>
                 <p className="text-gray-700 mb-6 whitespace-pre-line">{panel.description}</p>
                 <h5 className="text-lg font-semibold text-gray-900 mb-3">Specifications</h5>
                 <ul className="space-y-2">

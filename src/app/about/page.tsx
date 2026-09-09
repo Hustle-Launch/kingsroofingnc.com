@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -26,6 +27,13 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-8">
+            <Image
+              src="/images/slide4.jpeg"
+              alt="Kings Roofing crew and completed roof work"
+              width={1024}
+              height={683}
+              className="w-full h-auto rounded-lg"
+            />
             <p className="text-lg text-gray-700 leading-relaxed">
               <Link href="/contact" className="text-orange-500 hover:underline font-semibold">
                 King&apos;s Haywood Construction

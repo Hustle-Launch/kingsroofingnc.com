@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -10,18 +11,18 @@ export const metadata: Metadata = {
 };
 
 const SHINGLE_COLORS = [
-  "Barkwood",
-  "Birchwood",
-  "Charcoal",
-  "Driftwood",
-  "Hickory",
-  "Hunter Green",
-  "Pewter Gray",
-  "Shakewood",
-  "Slate",
-  "Weathered Wood",
-  "White",
-];
+  { name: "Barkwood", slug: "barkwood" },
+  { name: "Birchwood", slug: "birchwood" },
+  { name: "Charcoal", slug: "charcoal" },
+  { name: "Driftwood", slug: "driftwood" },
+  { name: "Hickory", slug: "hickory" },
+  { name: "Hunter Green", slug: "hunter_green" },
+  { name: "Pewter Gray", slug: "pewter_gray" },
+  { name: "Shakewood", slug: "shakewood" },
+  { name: "Slate", slug: "slate" },
+  { name: "Weathered Wood", slug: "weathered_wood" },
+  { name: "White", slug: "white" },
+] as const;
 
 export default function ShinglesColorPage() {
   return (
@@ -39,11 +40,15 @@ export default function ShinglesColorPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {SHINGLE_COLORS.map((color) => (
-              <div
-                key={color}
-                className="bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors"
-              >
-                <span className="font-medium text-gray-900 text-lg">{color}</span>
+              <div key={color.slug} className="bg-gray-100 rounded-lg overflow-hidden text-center">
+                <Image
+                  src={`/images/timberline-large-${color.slug}.jpeg`}
+                  alt={`GAF Timberline HD ${color.name}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-32 object-cover"
+                />
+                <span className="block font-medium text-gray-900 text-lg p-4">{color.name}</span>
               </div>
             ))}
           </div>

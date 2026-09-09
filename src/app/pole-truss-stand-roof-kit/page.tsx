@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -65,6 +66,18 @@ export default function Page() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white pt-10">
+        <div className="container mx-auto px-4">
+          <Image
+            src="/images/metal-trusses-800x600.jpg"
+            alt="Pole truss stand roof kit"
+            width={800}
+            height={600}
+            className="w-full max-w-4xl mx-auto h-auto rounded-lg"
+          />
         </div>
       </section>
 

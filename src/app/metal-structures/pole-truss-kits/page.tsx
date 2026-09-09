@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -26,6 +27,13 @@ export default function PoleTrussKitsPage() {
           <div className="space-y-16 max-w-4xl mx-auto">
             {/* Stand Roof Kit */}
             <div className="border-b border-gray-200 pb-16">
+              <Image
+                src="/images/metal-trusses-800x600.jpg"
+                alt="Pole truss stand roof kit"
+                width={800}
+                height={600}
+                className="w-full h-auto rounded-lg mb-6"
+              />
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Pole Truss Stand Roof Kit</h2>
               <h3 className="text-xl text-orange-500 font-semibold mb-4">Stand Roof Style</h3>
               <p className="text-lg text-gray-700 mb-6">
@@ -42,6 +50,13 @@ export default function PoleTrussKitsPage() {
 
             {/* Enclosed Kit */}
             <div>
+              <Image
+                src="/images/Pole-Truss-Enclosed-Kit-1024x576.jpeg"
+                alt="Pole truss enclosed kit"
+                width={1024}
+                height={576}
+                className="w-full h-auto rounded-lg mb-6"
+              />
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Pole Truss Enclosed Kits</h2>
               <h3 className="text-xl text-orange-500 font-semibold mb-4">Enclosed Style</h3>
               <p className="text-lg text-gray-700 mb-6">

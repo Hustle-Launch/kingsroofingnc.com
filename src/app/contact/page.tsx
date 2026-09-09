@@ -6,8 +6,7 @@ import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact | Kings Roofing, inc.",
-  description:
-    "Contact Kings Roofing for a free quote on your roofing project. Serving Asheville, Waynesville, Highlands, and all of Western NC. Call ${COMPANY.phone}.",
+  description: `Contact Kings Roofing for a free quote on your roofing project. Serving Asheville, Waynesville, Highlands, and all of Western NC. Call ${COMPANY.phone}.`,
 };
 
 export default function ContactPage() {

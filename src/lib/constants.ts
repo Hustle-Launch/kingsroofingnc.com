@@ -5,7 +5,30 @@ export const COMPANY = {
   phoneAlt: "828-279-6896",
   email: "kingshaywood@gmail.com",
   address: "Western North Carolina",
+  facebook: "https://www.facebook.com/kingshaywood/",
 } as const;
+
+export const SOCIAL_LINKS = [
+  { label: "Pinterest", href: "https://www.pinterest.com/kingshaywood/_saved/" },
+  { label: "Facebook", href: "https://www.facebook.com/kingshaywood/" },
+  { label: "Twitter", href: "https://twitter.com/rooferasheville" },
+  { label: "YouTube", href: "https://www.youtube.com/channel/UCa6vq9gUUFcOzWau9H-G3iw" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/kings-haywood-construction/" },
+  { label: "Instagram", href: "https://www.instagram.com/kingshaywood/" },
+  {
+    label: "Houzz",
+    href: "https://www.houzz.com/professionals/roofing-and-gutters/kings-haywood-construction-pfvwus-pf~1738388900",
+  },
+  {
+    label: "Angi",
+    href: "https://www.angi.com/companylist/us/nc/waynesville/king%27s-haywood-construction-reviews-5894215.htm",
+  },
+  { label: "Yelp", href: "https://www.yelp.com/biz/kings-haywood-construction-asheville" },
+  {
+    label: "Porch",
+    href: "https://porch.com/waynesville-nc/siding-contractors/kings-haywood-construction/pp",
+  },
+] as const;
 
 export const SERVICE_AREAS = [
   "Asheville",

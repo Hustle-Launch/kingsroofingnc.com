@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, SOCIAL_LINKS } from "@/lib/constants";
 import { PiPhoneLight } from "react-icons/pi";
 
 export function Footer() {
@@ -59,7 +59,7 @@ export function Footer() {
                 Someone is available Monday through Saturday to answer all of your questions.
               </p>
               <a
-                href="https://facebook.com"
+                href={COMPANY.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:underline text-sm mt-2 inline-block"
@@ -115,29 +115,16 @@ export function Footer() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-center gap-2">
-            {[
-              "pinterest",
-              "facebook",
-              "google",
-              "twitter",
-              "youtube",
-              "linkedin",
-              "instagram",
-              "houzz",
-              "angies",
-              "yelp",
-              "porch",
-              "blogger",
-              "tumblr",
-              "wordpress",
-            ].map((social) => (
+            {SOCIAL_LINKS.map((social) => (
               <a
-                key={social}
-                href="#"
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors"
-                aria-label={social}
+                aria-label={social.label}
               >
-                <span className="text-[8px] text-white uppercase">{social[0]}</span>
+                <span className="text-[8px] text-white uppercase">{social.label[0]}</span>
               </a>
             ))}
           </div>
@@ -155,7 +142,7 @@ export function Footer() {
             . All rights Reserved.
           </p>
           <p className="mt-1">
-            <Link href="/sitemap" className="hover:text-orange-400">
+            <Link href="/sitemap.xml" className="hover:text-orange-400">
               Sitemap
             </Link>{" "}
             |{" "}

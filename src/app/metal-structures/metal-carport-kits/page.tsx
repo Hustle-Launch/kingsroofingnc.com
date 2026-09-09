@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout";
@@ -16,6 +17,7 @@ const CARPORT_STYLES = [
     description:
       "Regular Style Carports are often used for inexpensive car shelters, single and double metal carports, boat storage shelters, RV carports, and for value-priced combo carports or carports with storage buildings.",
     link: "/regular-style-metal-carports",
+    image: "/images/regular-carport-1024x576.jpeg",
   },
   {
     title: "Boxed Eave Style Metal Carport",
@@ -23,6 +25,7 @@ const CARPORT_STYLES = [
     description:
       "Boxed-eave metal carports are built with an A-frame roof. Many homeowners choose this option to have a carport that will match the roof style of their home.",
     link: "/boxed-eave-style-metal-carport",
+    image: "/images/boxed-eave-carport-1024x576.jpeg",
   },
   {
     title: "Vertical Roof Style Metal Carport",
@@ -30,6 +33,7 @@ const CARPORT_STYLES = [
     description:
       "The vertical roof style metal carport is the strongest roof style available. The roofing panels are laid in a vertical orientation starting from the peak and ending at the eaves/sides.",
     link: "/vertical-roof-style-metal-carport",
+    image: "/images/vertical-carport-1024x576.jpeg",
   },
 ];
 
@@ -50,6 +54,13 @@ export default function MetalCarportKitsPage() {
           <div className="space-y-16 max-w-4xl mx-auto">
             {CARPORT_STYLES.map((style) => (
               <div key={style.title} className="border-b border-gray-200 pb-16 last:border-0">
+                <Image
+                  src={style.image}
+                  alt={style.title}
+                  width={1024}
+                  height={576}
+                  className="w-full h-auto rounded-lg mb-6"
+                />
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">{style.title}</h2>
                 <h3 className="text-xl text-orange-500 font-semibold mb-4">{style.subtitle}</h3>
                 <p className="text-lg text-gray-700 mb-6">{style.description}</p>
