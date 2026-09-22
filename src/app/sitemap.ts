@@ -29,19 +29,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/waynesville`,
+      url: `${baseUrl}/residential/waynesville`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/highlands`,
+      url: `${baseUrl}/residential/highlands`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/cashiers`,
+      url: `${baseUrl}/residential/cashiers`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
